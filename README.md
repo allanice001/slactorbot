@@ -1,2 +1,4 @@
 # slactorbot
-A Slack bot with hot patch!
+
+A slack bot that uses lightweights actors and dynamic module imports for plugins
+
