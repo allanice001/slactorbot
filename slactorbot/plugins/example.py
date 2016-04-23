@@ -3,4 +3,7 @@ from thespian.actors import *
 
 class Main(Actor):
     def receiveMessage(self, msg, sender):
-        self.send(sender, 'Example Reply')
+        if len(msg) == 0:
+            self.send(sender, 'usage: dlbot example kitten')
+        elif msg[0] == 'kitten':
+            self.send(sender, 'I bet you expected a kitten picture')

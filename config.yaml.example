@@ -1,3 +1,5 @@
 ---
 
 slack_token: ""
+slack_channel: ""
+bot_name: ""
