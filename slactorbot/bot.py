@@ -14,7 +14,6 @@ def start():
         sys.exit(1)
     else:
         config_file = sys.argv[1]
-    print config_file
     with open(config_file, 'r') as stream:
         config = yaml.load(stream)
 
