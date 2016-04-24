@@ -35,5 +35,5 @@ If in doubt have a look at the example.py plugin.
 
 # Todo
 
-Needs more slack stuff. Currently it just listens and prints the messages to stdout. I'll add the slack
-integrations next.
+* More slack options
+* Handle restarting crashes actors
