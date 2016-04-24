@@ -6,7 +6,7 @@ Start the bot. Add, remove or edit plugins and magic happens.
 
 # Usage
 
-Copy the config.yaml.example to config.example and update the settings. Do a `pip install -r requirements.txt`.
+Copy the config.yaml.example to config.yaml and update the settings. Do a `pip install -r requirements.txt`.
 
 Then `./run_bot.py`
 
