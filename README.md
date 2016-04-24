@@ -36,6 +36,6 @@ If in doubt have a look at the example.py plugin.
 # Todo
 
 * More slack options
-* Handle restarting crashes actors
+* Handle restarting crashes in actors
 * Make it a pip package
 * Needs tests
