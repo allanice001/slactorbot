@@ -14,7 +14,7 @@ The bot responds to:
 
 `bot_name` `plugin name` `commands`
 
-For instance if I have my bot_name configured as `dlbot` and I've got a plugin called example.py I'd type:
+For instance if I have my bot_name configured as `dlbot` and I've got a plugin called `example.py` I'd type:
 
 `dlbot example kitten`
 
