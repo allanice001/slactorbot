@@ -26,6 +26,7 @@ def start(config_file):
             try:
                 plugin_actors = plugins.load_plugins(actor_system, plugin_actors)
                 message = slack_client.rtm_read()
+                slack_client.server.ping()
                 if isinstance(message, list) and len(message) > 0:
                     message = message[0]
                     if 'type' in message.keys() and message['type'] == 'message':
