@@ -17,7 +17,7 @@ All of the Python slack bots I tried were annoying.
 
 Copy the config.yaml.example to config.yaml and update the settings. Do a `pip install -r requirements.txt`.
 
-Then `./run_bot.py`
+Then `./run_bot.py config.yaml`
 
 The bot responds to:
 
