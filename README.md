@@ -37,3 +37,5 @@ If in doubt have a look at the example.py plugin.
 
 * More slack options
 * Handle restarting crashes actors
+* Make it a pip package
+* Needs tests
