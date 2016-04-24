@@ -8,7 +8,13 @@ from slackclient import SlackClient
 from thespian.actors import *
 
 
-def start(config_file):
+def start():
+    if len(sys.argv) < 2:
+        print "usage: %s config_file_location" % sys.argv[0]
+        sys.exit(1)
+    else:
+        config_file = sys.argv[1]
+    print config_file
     with open(config_file, 'r') as stream:
         config = yaml.load(stream)
 

@@ -34,7 +34,7 @@ setup(
     author='Steven Acreman',
     author_email='steven.acreman@dataloop.io',
     description='A Python Slack Bot with hot patch!',
-    long_description=fread('README.MD'),
+    long_description=fread('README.md'),
     keywords="slack bot",
     packages=find_packages(exclude=['tests']),
     exclude_package_data={'': ['config.yaml']},
@@ -44,7 +44,7 @@ setup(
     install_requires=dependencies,
     entry_points={
         'console_scripts': [
-            'slactorbot = slactorbot.bot:start',
+            "slactorbot = slactorbot.bot:start",
         ],
     },
     classifiers=[

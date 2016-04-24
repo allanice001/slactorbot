@@ -1,5 +1,6 @@
 .idea/
 dist/
+build/
 slactorbot.egg-info/
 config.yaml
 *.pyc
