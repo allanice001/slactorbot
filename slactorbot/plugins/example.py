@@ -10,7 +10,7 @@ class Main(Actor):
 
         # if no command is specified provide some help
         if isinstance(msg, list) and len(msg) == 0:
-            self.send(sender, 'usage: dlbot example [text|gif]')
+            self.send(sender, 'usage: dlbot example [text|gif|commit]')
 
         # for the command 'text' send back a simple text reply
         elif msg[0] == 'text':
@@ -30,6 +30,10 @@ class Main(Actor):
                 gifs = list(map(unescape, re.findall(r"var u='(.*?)'", result)))
                 shuffle(gifs)
                 self.send(sender, gifs[0].encode("utf8"))
+
+        # for the command 'commit' return a funny commit message to use
+        elif msg[0] == 'commit':
+            self.send(sender, requests.get("http://whatthecommit.com/index.txt").text)
 
         # if no commands were recognised
         else:
