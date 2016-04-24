@@ -25,12 +25,12 @@ def start(config_file):
         while True:
             try:
                 plugin_actors = plugins.load_plugins(actor_system, plugin_actors)
-                message = slack_client.rtm_read()
                 slack_client.server.ping()
+                message = slack_client.rtm_read()
                 if isinstance(message, list) and len(message) > 0:
                     message = message[0]
                     if 'type' in message.keys() and message['type'] == 'message':
-                        if 'text' in message.keys() and  message['text'].startswith(bot_name):
+                        if 'text' in message.keys() and message['text'].startswith(bot_name):
                             commands = message['text'].split()
                             if len(commands) == 1:
                                 channel.send_message('please specify a command or help')
