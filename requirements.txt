@@ -1,3 +1,4 @@
 thespian==2.5.9
 slackclient==1.0.0
 PyYAML==3.11
+requests==2.9.1
