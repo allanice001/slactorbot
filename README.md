@@ -4,6 +4,15 @@ A slack bot that uses lightweights actors and dynamic module imports for plugins
 
 Start the bot. Add, remove or edit plugins and magic happens.
 
+# Why?
+
+All of the Python slack bots I tried were annoying.
+
+* Every plugin got sent every message and then filtered by regex. I just wanted slack commands to run the correct plugin.
+* Working on plugins locally and then constantly restarting the bot to test them became tedious
+* The basic list of commands shown by help shouldn't require manually updating any files
+* Exceptions in plugins would crash everything. Why not let it live and crash the plugin.
+
 # Usage
 
 Copy the config.yaml.example to config.yaml and update the settings. Do a `pip install -r requirements.txt`.
