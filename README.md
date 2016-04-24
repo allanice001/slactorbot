@@ -2,11 +2,24 @@
 
 A slack bot that uses lightweights actors and dynamic module imports for plugins
 
+Start the bot. Add, remove or edit plugins and magic happens.
+
 # Usage
 
 Copy the config.yaml.example to config.example and update the settings
 
 Then `./run_bot.py`
+
+The bot responds to:
+
+`bot_name` `plugin name` `commands`
+
+For instance if I have my bot_name configured as `dlbot` and I've got a plugin called example.py I'd type:
+
+`dlbot example kitten`
+
+Into the slack channel configured in the config. This would run whatever logic is in the example.py plugin
+within the elif for kitten.
 
 # Plugins
 
@@ -16,8 +29,7 @@ them without needing to restart.
 The plugins are little actors that get dynamically imported. They each need a class called `Main` and
 a `receiveMessage` function.
 
-Every actor will get passed the firehose of messages from Slack. You'll need to put a regex on the `msg`
-and then you can perform actions and send back the result.
+They receive a message which is a list of words typed after the bot_name and the plugin name in the slack room.
 
 If in doubt have a look at the example.py plugin.
 
