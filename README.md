@@ -28,7 +28,7 @@ For instance if I have my bot_name configured as `dlbot` and I've got a plugin c
 `dlbot example text`
 
 Into the slack channel configured in the config. This would run whatever logic is in the example.py plugin
-within the elif for kitten.
+within the elif for the command `text`.
 
 # Plugins
 
