@@ -25,6 +25,11 @@ The bot responds to:
 
 For instance if I have my bot_name configured as `dlbot` and I've got a plugin called `example.py` I'd type:
 
+`dlbot example text`
+
+Into the slack channel configured in the config. This would run whatever logic is in the example.py plugin
+within the elif for the command `text`.
+
 # Installation with pip
 
 `pip install --upgrade slactorbot`
@@ -36,11 +41,6 @@ Then run it and specify a valid config file.
 If you want to leave it running on a server I'd start it under supervisor or an init script.
 
 You'll need to drop new plugins into the plugins dir printed out when slactorbot starts. This isn't configurable yet.
-
-`dlbot example text`
-
-Into the slack channel configured in the config. This would run whatever logic is in the example.py plugin
-within the elif for the command `text`.
 
 # Plugins
 
