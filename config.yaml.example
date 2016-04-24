@@ -1,5 +1,10 @@
 ---
 
+# you can create a token here: https://api.slack.com/bot-users
 slack_token: ""
+
+# specify the channel the bot will reply to e.g. bot-talk
 slack_channel: ""
+
+# the name the bot responds to e.g. dlbot
 bot_name: ""
