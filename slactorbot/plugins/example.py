@@ -1,12 +1,15 @@
-from thespian.actors import *
-from urllib import quote
 import re
-import requests
+from urllib import quote
 from random import shuffle
+from thespian.actors import *
+import requests
 
 
 class Main(Actor):
     def receiveMessage(self, msg, sender):
+        # catch the shutdown request and exit
+        if isinstance(msg, ActorExitRequest):
+            return None
 
         # if no command is specified provide some help
         if isinstance(msg, list) and len(msg) == 0:

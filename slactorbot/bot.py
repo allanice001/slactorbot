@@ -3,6 +3,7 @@ import sys
 import time
 import yaml
 from lib import plugins
+from plugins import plugins_dir
 from slackclient import SlackClient
 from thespian.actors import *
 
@@ -20,7 +21,8 @@ def start(config_file):
     plugin_actors = {}
 
     if slack_client.rtm_connect():
-        print "bot started"
+        print "slactorbot started"
+        print "plugins dir: %s" % plugins_dir()
         channel = slack_client.server.channels.find(slack_channel)
         while True:
             try:
