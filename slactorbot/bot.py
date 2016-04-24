@@ -28,23 +28,26 @@ def start(config_file):
                 message = slack_client.rtm_read()
                 if isinstance(message, list) and len(message) > 0:
                     message = message[0]
-                    if 'type' in message.keys():
-                        if message['type'] == 'message':
-                            if 'text' in message.keys():
-                                if message['text'].startswith(bot_name):
-                                    commands = message['text'].split()
-                                    if len(commands) == 1:
-                                        channel.send_message('please specify a command or help')
-                                    else:
-                                        try:
-                                            actor = commands[1]
-                                            reply = actor_system.ask(plugin_actors[actor]['actor'], commands[2:], 1.5)
-                                            channel.send_message(reply)
-                                        except KeyError:
-                                                channel.send_message('unknown command')
+                    if 'type' in message.keys() and message['type'] == 'message':
+                        if 'text' in message.keys() and  message['text'].startswith(bot_name):
+                            commands = message['text'].split()
+                            if len(commands) == 1:
+                                channel.send_message('please specify a command or help')
+                            elif commands[1] == 'help':
+                                help_message = "available commands: %s" % ','.join(plugin_actors.keys())
+                                channel.send_message(help_message)
+                            else:
+                                actor = commands[1]
+                                reply = actor_system.ask(plugin_actors[actor]['actor'], commands[2:], 1.5)
+                                channel.send_message(reply)
                 time.sleep(1)
+
+            except KeyError:
+                channel.send_message('unknown command')
+
             except KeyboardInterrupt:
                 actor_system.shutdown()
                 sys.exit(0)
     else:
         print "Connection Failed, invalid token?"
+        sys.exit(2)
